@@ -1,0 +1,35 @@
+{
+  "code": "VALIDATION",
+  "error": {
+    "code": "VALIDATION",
+    "status": 422,
+    "type": "body",
+    "validator": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "format": "email",
+            "type": "string"
+          },
+          "password": {
+            "minLength": 6,
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ],
+        "additionalProperties": false
+      },
+      "references": [],
+      "code": "return function check(value) {\n  return (\n    (typeof value === 'object' && value !== null && !Array.isArray(value)) &&\n    (typeof value.email === 'string') &&\n    format('email', value.email) &&\n    (typeof value.password === 'string') &&\n    value.password.length >= 6 &&\n    Object.getOwnPropertyNames(value).length === 2\n  )\n}",
+      "hasTransform": false
+    },
+    "value": {
+      "email": "invalid.email",
+      "password": "wUneeulI"
+    }
+  }
+}

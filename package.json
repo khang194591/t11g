@@ -1,0 +1,13 @@
+{
+  "name": "t11g",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
+}
